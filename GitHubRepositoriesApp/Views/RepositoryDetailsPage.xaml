@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="GitHubRepositoriesApp.Views.RepositoryDetailsPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Детальная информация">
+    <StackLayout Margin="5" Spacing="5">
+        <StackLayout Orientation="Horizontal" Spacing="10">
+            <Image
+                HeightRequest="20"
+                Source="{Binding CurrentRepository.Owner.AvatarUrl}"
+                WidthRequest="20" />
+            <Label
+                FontAttributes="Bold"
+                FontSize="18"
+                Text="{Binding CurrentRepository.Name}"
+                TextColor="#1f2328" />
+
+            <Border BackgroundColor="#ffffff" Stroke="#d0d7de">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="20" />
+                </Border.StrokeShape>
+                <Label
+                    Margin="5,0"
+                    FontSize="14"
+                    Text="{Binding CurrentRepository.Visibility}"
+                    TextColor="#1f2328" />
+            </Border>
+
+            <StackLayout Orientation="Horizontal" Spacing="2">
+                <Ellipse
+                    Fill="Green"
+                    HeightRequest="10"
+                    HorizontalOptions="Start"
+                    WidthRequest="10" />
+                <Label
+                    FontSize="16"
+                    Text="{Binding CurrentRepository.Language}"
+                    TextColor="#1f2328" />
+            </StackLayout>
+
+
+        </StackLayout>
+
+        <Border BackgroundColor="#ffffff" Stroke="#d0d7de">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="5" />
+            </Border.StrokeShape>
+
+            <StackLayout Margin="5">
+
+                <StackLayout Orientation="Horizontal" Spacing="5">
+                    <Label
+                        FontAttributes="Bold"
+                        FontSize="18"
+                        Text="Дата создания:"
+                        TextColor="#1f2328" />
+                    <Label
+                        FontSize="18"
+                        Text="{Binding CurrentRepository.CreatedAt}"
+                        TextColor="#1f2328" />
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Spacing="5">
+                    <Label
+                        FontAttributes="Bold"
+                        FontSize="18"
+                        Text="Дата поледнего обновления:"
+                        TextColor="#1f2328" />
+                    <Label
+                        FontSize="18"
+                        Text="{Binding CurrentRepository.UpdatedAt}"
+                        TextColor="#1f2328" />
+                </StackLayout>
+
+            </StackLayout>
+        </Border>
+
+        <Button
+            BackgroundColor="#1f883d"
+            Command="{Binding OpenGitHubPageCommand}"
+            FontSize="18"
+            Text="Открыть страницу на GitHub"
+            TextColor="#ffffff" />
+    </StackLayout>
+</ContentPage>

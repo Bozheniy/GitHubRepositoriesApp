@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="GitHubRepositoriesApp.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    Title="Доступные репозитории">
+
+    <StackLayout>
+
+        <StackLayout Margin="5">
+            <Entry
+                ClearButtonVisibility="WhileEditing"
+                FontSize="18"
+                Placeholder="Поиск"
+                Text="{Binding SearchItem}"
+                TextColor="#000000">
+                <Entry.Behaviors>
+                    <toolkit:EventToCommandBehavior Command="{Binding SearchTextChangedCommand}" EventName="TextChanged" />
+                </Entry.Behaviors>
+            </Entry>
+        </StackLayout>
+
+        <CollectionView
+            x:Name="collectionView"
+            Margin="5"
+            ItemsSource="{Binding RepositoryCollection}"
+            SelectionChangedCommand="{Binding ItemSelectedCommand}"
+            SelectionChangedCommandParameter="{Binding Source={RelativeSource Self}, Path=SelectedItem}"
+            SelectionMode="Single">
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout ItemSpacing="3" Orientation="Vertical" />
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Border BackgroundColor="#ffffff" Stroke="#d0d7de">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="5" />
+                        </Border.StrokeShape>
+                        <Grid Margin="8">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+
+                            <Label
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                FontAttributes="Bold"
+                                FontSize="16"
+                                Text="{Binding Name}"
+                                TextColor="#3d89e2" />
+
+                            <Label
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                FontSize="14"
+                                HorizontalOptions="End"
+                                Text="{Binding Visibility}"
+                                TextColor="#636c76" />
+
+                            <StackLayout
+                                Grid.Row="1"
+                                Grid.Column="0"
+                                Orientation="Horizontal"
+                                Spacing="2">
+                                <Ellipse
+                                    Fill="Green"
+                                    HeightRequest="10"
+                                    HorizontalOptions="Start"
+                                    WidthRequest="10" />
+                                <Label
+                                    FontSize="14"
+                                    Text="{Binding Language}"
+                                    TextColor="#636c76" />
+                            </StackLayout>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+
+</ContentPage>

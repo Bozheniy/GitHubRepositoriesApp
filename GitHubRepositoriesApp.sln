@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34525.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GitHubRepositoriesApp", "GitHubRepositoriesApp\GitHubRepositoriesApp.csproj", "{52D30DCF-5C34-41DC-8C22-74E5CEDA4DB1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitHubRepositoriesApp.Domain", "GitHubRepositoriesApp.Domain\GitHubRepositoriesApp.Domain.csproj", "{2267384A-B207-448F-B194-161059891DFE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitHubRepositoriesApp.Application", "GitHubRepositoriesApp.Application\GitHubRepositoriesApp.Application.csproj", "{6BC61B99-432C-4A72-82A4-7F7B18F9002A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{2267384A-B207-448F-B194-161059891DFE} = {2267384A-B207-448F-B194-161059891DFE}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitHubRepositoriesApp.Infrastructure", "GitHubRepositoriesApp.Infrastructure\GitHubRepositoriesApp.Infrastructure.csproj", "{A0BED4C7-2D30-4173-94B6-3AE40A93FC86}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{52D30DCF-5C34-41DC-8C22-74E5CEDA4DB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52D30DCF-5C34-41DC-8C22-74E5CEDA4DB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52D30DCF-5C34-41DC-8C22-74E5CEDA4DB1}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{52D30DCF-5C34-41DC-8C22-74E5CEDA4DB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52D30DCF-5C34-41DC-8C22-74E5CEDA4DB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52D30DCF-5C34-41DC-8C22-74E5CEDA4DB1}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{2267384A-B207-448F-B194-161059891DFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2267384A-B207-448F-B194-161059891DFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2267384A-B207-448F-B194-161059891DFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2267384A-B207-448F-B194-161059891DFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6BC61B99-432C-4A72-82A4-7F7B18F9002A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BC61B99-432C-4A72-82A4-7F7B18F9002A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BC61B99-432C-4A72-82A4-7F7B18F9002A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BC61B99-432C-4A72-82A4-7F7B18F9002A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0BED4C7-2D30-4173-94B6-3AE40A93FC86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0BED4C7-2D30-4173-94B6-3AE40A93FC86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0BED4C7-2D30-4173-94B6-3AE40A93FC86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0BED4C7-2D30-4173-94B6-3AE40A93FC86}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BCC903CF-D554-49D7-ADBB-35586A89ADA0}
+	EndGlobalSection
+EndGlobal
